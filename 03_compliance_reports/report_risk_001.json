@@ -1,0 +1,32 @@
+{
+    "report_id": "RPT-002",
+    "artifact_id": "RISK-001",
+    "artifact_type": "supplier_risk_score",
+    "checked_at": "2026-08-13T10:20:00Z",
+    "findings": [
+      {
+        "finding_id": "FIND-004",
+        "regulation": "EU AI Act",
+        "article": "Article 9",
+        "article_title": "Risk management system",
+        "gap_description": "No documented risk management process is linked to the supplier-risk model",
+        "severity": "high",
+        "evidence": "risk_management_document_available = false",
+        "remediation": "Create and maintain a documented risk management process",
+        "rag_confidence": 0.91
+      },
+      {
+        "finding_id": "FIND-005",
+        "regulation": "EU AI Act",
+        "article": "Article 14",
+        "article_title": "Human oversight",
+        "gap_description": "No human review is recorded for the high-risk supplier classification",
+        "severity": "high",
+        "evidence": "human_review = false, human_reviewer = null",
+        "remediation": "Require a qualified human to review high-risk supplier decisions",
+        "rag_confidence": 0.89
+      }
+    ],
+    "overall_risk_level": "high",
+    "compliant": false
+  }

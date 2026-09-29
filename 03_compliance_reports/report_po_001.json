@@ -1,0 +1,32 @@
+{
+    "report_id": "RPT-003",
+    "artifact_id": "PO-001",
+    "artifact_type": "automated_purchase_order",
+    "checked_at": "2026-08-13T10:25:00Z",
+    "findings": [
+      {
+        "finding_id": "FIND-006",
+        "regulation": "EU AI Act",
+        "article": "Article 12",
+        "article_title": "Record-keeping",
+        "gap_description": "The purchase-order record does not contain a complete explanation of the AI decision",
+        "severity": "medium",
+        "evidence": "decision_basis is present but decision explanation is missing",
+        "remediation": "Store the input factors and decision explanation used to create the purchase order",
+        "rag_confidence": 0.86
+      },
+      {
+        "finding_id": "FIND-007",
+        "regulation": "EU AI Act",
+        "article": "Article 14",
+        "article_title": "Human oversight",
+        "gap_description": "The purchase order was created without recorded human approval",
+        "severity": "high",
+        "evidence": "human_approval = false, human_reviewer = null",
+        "remediation": "Add a human approval step before final order execution",
+        "rag_confidence": 0.93
+      }
+    ],
+    "overall_risk_level": "high",
+    "compliant": false
+  }

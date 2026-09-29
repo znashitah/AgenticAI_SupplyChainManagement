@@ -1,0 +1,19 @@
+{
+    "artifact_id": "SHIP-001",
+    "artifact_type": "delivery_prediction",
+    "shipment_id": "SHP-2001",
+    "origin": "Shanghai, CN",
+    "destination": "Hamburg, DE",
+    "expected_arrival": "2026-08-20",
+    "predicted_arrival": "2026-08-23",
+    "predicted_delay_days": 3,
+    "recommended_action": "change_route",
+    "model_name": "LogisticsDelayAI",
+    "model_version": "1.1.0",
+    "human_review": false,
+    "human_reviewer": null,
+    "technical_documentation_link": null,
+    "logs_available": true,
+    "created_at": "2026-08-13T10:10:00Z",
+    "created_by": "LogisticsDelayAI"
+  }

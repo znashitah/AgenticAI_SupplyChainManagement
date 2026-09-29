@@ -1,0 +1,32 @@
+{
+    "report_id": "RPT-004",
+    "artifact_id": "SHIP-001",
+    "artifact_type": "delivery_prediction",
+    "checked_at": "2026-08-13T10:30:00Z",
+    "findings": [
+      {
+        "finding_id": "FIND-008",
+        "regulation": "EU AI Act",
+        "article": "Article 11",
+        "article_title": "Technical documentation",
+        "gap_description": "No technical documentation is linked to the shipment-delay prediction model",
+        "severity": "medium",
+        "evidence": "technical_documentation_link = null",
+        "remediation": "Create and link documentation describing the model, data, limitations, and validation",
+        "rag_confidence": 0.88
+      },
+      {
+        "finding_id": "FIND-009",
+        "regulation": "EU AI Act",
+        "article": "Article 12",
+        "article_title": "Record-keeping",
+        "gap_description": "The prediction record does not contain complete operational logs",
+        "severity": "medium",
+        "evidence": "logs_available = false",
+        "remediation": "Enable automatic logging of predictions, inputs, outputs, and timestamps",
+        "rag_confidence": 0.90
+      }
+    ],
+    "overall_risk_level": "medium",
+    "compliant": false
+  }

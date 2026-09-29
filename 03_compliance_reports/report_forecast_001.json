@@ -1,0 +1,43 @@
+{
+    "report_id": "RPT-001",
+    "artifact_id": "FORECAST-001",
+    "artifact_type": "demand_forecast",
+    "checked_at": "2026-08-13T10:15:00Z",
+    "findings": [
+      {
+        "finding_id": "FIND-001",
+        "regulation": "EU AI Act",
+        "article": "Article 14",
+        "article_title": "Human oversight",
+        "gap_description": "No human approval recorded for AI-driven procurement recommendation",
+        "severity": "high",
+        "evidence": "human_approval = false, human_reviewer = null",
+        "remediation": "Add a documented human approval step before executing purchase orders",
+        "rag_confidence": 0.92
+      },
+      {
+        "finding_id": "FIND-002",
+        "regulation": "EU AI Act",
+        "article": "Article 11",
+        "article_title": "Technical documentation",
+        "gap_description": "No technical documentation link provided for the AI model",
+        "severity": "medium",
+        "evidence": "technical_documentation_link = null",
+        "remediation": "Create and link technical documentation according to Annex IV",
+        "rag_confidence": 0.88
+      },
+      {
+        "finding_id": "FIND-003",
+        "regulation": "EU AI Act",
+        "article": "Article 9",
+        "article_title": "Risk management system",
+        "gap_description": "No risk assessment available for this AI system",
+        "severity": "high",
+        "evidence": "risk_assessment_available = false",
+        "remediation": "Implement and document a risk management system",
+        "rag_confidence": 0.90
+      }
+    ],
+    "overall_risk_level": "high",
+    "compliant": false
+  }

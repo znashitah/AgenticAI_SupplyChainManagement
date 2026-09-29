@@ -1,0 +1,9 @@
+{
+    "event_id": "EVT-001",
+    "event_type": "ai_demand_forecast_created",
+    "artifact_id": "FORECAST-001",
+    "artifact_type": "demand_forecast",
+    "timestamp": "2026-08-13T10:00:00Z",
+    "actor": "DemandForecastAI",
+    "system_name": "SupplyChainAI-Demo"
+  }

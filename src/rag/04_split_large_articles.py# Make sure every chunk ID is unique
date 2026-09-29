@@ -1,0 +1,101 @@
+from pathlib import Path
+import json
+import re
+
+INPUT_FILE = Path("data/processed/eu_ai_act_chunks.json")
+OUTPUT_FILE = Path("data/processed/eu_ai_act_final_chunks.json")
+
+MAX_CHARS = 8000
+
+articles = json.loads(
+    INPUT_FILE.read_text(encoding="utf-8")
+)
+
+final_chunks = []
+
+for article in articles:
+    text = article["text"]
+
+    # Keep smaller articles as one chunk
+    if len(text) <= MAX_CHARS:
+        final_chunks.append(article)
+        continue
+
+    # Find numbered paragraphs
+    paragraph_pattern = re.compile(
+        r"(?m)^(?P<number>\d+)\.\s+"
+    )
+
+    matches = list(
+        paragraph_pattern.finditer(text)
+    )
+
+    if not matches:
+        final_chunks.append(article)
+        continue
+
+    for index, match in enumerate(matches):
+        start = match.start()
+
+        end = (
+            matches[index + 1].start()
+            if index + 1 < len(matches)
+            else len(text)
+        )
+
+        paragraph_text = text[start:end].strip()
+
+        paragraph_number = int(
+            match.group("number")
+        )
+
+        chunk_id = (
+            f"eu_ai_act_article_"
+            f"{article['article_number']}_"
+            f"paragraph_{paragraph_number}_"
+            f"chunk_{index + 1}"
+        )
+
+        chunk = {
+            "id": chunk_id,
+            "regulation": article["regulation"],
+            "article_number": article["article_number"],
+            "article_title": article["article_title"],
+            "chapter": article["chapter"],
+            "paragraph": paragraph_number,
+            "text": paragraph_text,
+            "source": article["source"],
+            "source_url": article["source_url"]
+        }
+
+        final_chunks.append(chunk)
+
+# Make sure every chunk ID is unique
+seen_ids = set()
+
+for chunk in final_chunks:
+    original_id = chunk["id"]
+    new_id = original_id
+    counter = 2
+
+    while new_id in seen_ids:
+        new_id = f"{original_id}_{counter}"
+        counter += 1
+
+    chunk["id"] = new_id
+    seen_ids.add(new_id)
+
+print(f"Original article chunks: {len(articles)}")
+print(f"Final RAG chunks: {len(final_chunks)}")
+print(f"Unique IDs: {len(seen_ids)}")
+
+OUTPUT_FILE.write_text(
+    json.dumps(
+        final_chunks,
+        ensure_ascii=False,
+        indent=2
+    ),
+    encoding="utf-8"
+)
+
+print(f"Saved final chunks to: {OUTPUT_FILE}")

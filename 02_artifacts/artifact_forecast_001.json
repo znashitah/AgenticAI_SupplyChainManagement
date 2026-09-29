@@ -1,0 +1,21 @@
+{
+    "artifact_id": "FORECAST-001",
+    "artifact_type": "demand_forecast",
+    "product_id": "PROD-XY",
+    "product_name": "Product XY",
+    "predicted_demand": 500,
+    "predicted_period": "2026-08-20 to 2026-08-27",
+    "recommended_action": "create_purchase_order",
+    "recommended_quantity": 400,
+    "model_name": "DemandForecast-v1",
+    "model_version": "1.2.0",
+    "training_data_summary": "2023-01 to 2026-07 sales data",
+    "confidence_score": 0.87,
+    "human_approval": false,
+    "human_reviewer": null,
+    "risk_assessment_available": false,
+    "technical_documentation_link": null,
+    "logs_available": true,
+    "created_at": "2026-08-13T09:55:00Z",
+    "created_by": "DemandForecastAI"
+  }

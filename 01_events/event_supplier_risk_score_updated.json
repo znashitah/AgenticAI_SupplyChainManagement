@@ -1,0 +1,9 @@
+{
+    "event_id": "EVT-002",
+    "event_type": "supplier_risk_score_updated",
+    "artifact_id": "RISK-001",
+    "artifact_type": "supplier_risk_score",
+    "timestamp": "2026-08-13T10:05:00Z",
+    "actor": "SupplierRiskAI",
+    "system_name": "SupplyChainAI-Demo"
+  }

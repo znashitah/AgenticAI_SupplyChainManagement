@@ -1,0 +1,21 @@
+{
+    "artifact_id": "PO-001",
+    "artifact_type": "automated_purchase_order",
+    "product_id": "PROD-XY",
+    "product_name": "Product XY",
+    "quantity": 400,
+    "supplier_id": "SUP-ABC",
+    "supplier_name": "Supplier ABC",
+    "total_price": 12000.00,
+    "currency": "EUR",
+    "decision_basis": "ai_demand_forecast",
+    "forecast_id": "FORECAST-001",
+    "model_name": "ProcurementAI",
+    "model_version": "1.0.0",
+    "human_approval": false,
+    "human_reviewer": null,
+    "technical_documentation_link": null,
+    "logs_available": true,
+    "created_at": "2026-08-13T10:05:00Z",
+    "created_by": "ProcurementAI"
+  }
